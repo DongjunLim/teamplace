@@ -1,9 +1,68 @@
-
+import os
 import sys
-sys.stdin = open("D:/GitHub/teamplace/teamplace/1주차/SWEA_1808_지희의_고장난_계산기/input.txt", "r")
+import math
+
+file_dr = os.path.abspath(__file__)
+curr_dr = os.path.dirname(file_dr)
+sys.stdin = open(curr_dr + "\input.txt", "r")
+
+def get_divisor(num):
+    divisors = []
+    length = int(math.sqrt(num)) + 1
+
+    for i in range(1,length):
+        if num % i == 0:
+            divisors.append(i)
+            divisors.append(num//i)
+    
+    divisors.sort(reverse=True)
+    return divisors
+
+def check_input(num):
+    for i in str(num):
+        tmp = int(i)
+        # print(tmp)
+        if tmp not in avail_num:
+            # print('impossible')
+            return False
+    # print('possible')
+    return True
+
+def bfs(X):
+    divisor_lst = get_divisor(X)
+    # print(divisor_lst)
+    
+    possible_divisors =[]
+    
+    for i in divisor_lst:
+        if check_input(i):
+            possible_divisors.append(i)
+    
+    print(possible_divisors)
+    
+    if len(possible_divisors) == 0:
+        return -1
+    elif len(possible_divisors) == 1:
+        if 1 in possible_divisors:
+            return -1
+
+    ans_lst = []
+    if X in possible_divisors:
+        answer = len(str(X))+1
+        return answer
+    else:
+        for i in possible_divisors:
+            if X//i in possible_divisors:
+                answer = len(str(i)) + len(str(X//i)) + 2
+                return answer
+            else:
+                answer =  len(str(i)) + 1 + bfs(X//i)
+                ans_lst.append(answer)
+
+    print(ans_lst)
+    return min(ans_lst)
 
 T = int(input())
-
 for test_case in range(1, T + 1):
 
     avail_num = []
@@ -14,19 +73,36 @@ for test_case in range(1, T + 1):
             avail_num.append(i)
     print(avail_num)
 
-    goal = int(input())
-    print(goal)
+    X = int(input())
+    print(X)
 
-    answer = 0
+    # divisor_lst = get_divisor(X)
+    # print(divisor_lst)
 
-    for i in avail_num:
-        tmp = goal//i
-        answer += tmp
-        print(tmp)
+    # possible_divisors =[]
+    
+    # for i in divisor_lst:
+    #     if check_input(i):
+    #         possible_divisors.append(i)
+    
+    # print(possible_divisors)
 
-    if answer == 0:
-        print('#%d %d' % (test_case,-1))
-    else:
-        print('#%d %d' % (test_case,answer))
+    # if len(possible_divisors) == 0:
+    #     answer = 0
+
+    # if X in possible_divisors:
+    #     answer = len(str(X))+1
+    # else:
+    #     for i in possible_divisors:
+    #         if X//i in possible_divisors:
+    #             answer = len(str(i)) + len(str(X//i)) + 2
+    #             break
+    #         else:
+    #             answer = 0
+
+
+
+    print('#%d %d' % (test_case, bfs(X)))
+
 
     
