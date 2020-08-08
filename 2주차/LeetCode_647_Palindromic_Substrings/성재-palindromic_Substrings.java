@@ -3,6 +3,7 @@ package leetcode;
  * 각 자리수의 부분 문자열을 구해서 대칭인지 확인.
  * 효율면으로 매우 안좋은것으로 보임
  * O(mN^2)
+ 305 ms 40MB
 */
 import java.util.*;
 public class palindrom_substrings {
