@@ -3,6 +3,7 @@ package leetcode;
  * 간단하게 모든 케이스를 만들어두고 시작
  * 각 자리수를 구해 만들어둔 값들에 넣어 문자열을 만듬
  * O(N)
+ * 6ms 39.7 MB
  */
 import java.util.*;
 public class integer_to_roman {
