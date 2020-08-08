@@ -5,6 +5,7 @@ len = 앞으로 갈수 있는 길이
 현재 nums[i]값이 0이면 지나감
 len값이 0보다 작으면 실패
 복잡도 O(N)
+1ms 41.2 MB
 */
 
 class Solution {
