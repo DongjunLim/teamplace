@@ -5,6 +5,7 @@ package leetcode;
  * 반대의 경우 더한것이 더 큼으로 dp[i]=dp[i-1]+nums[i]
  * 각 계산시 max값과 비교하여 더큰 값을 저장
  * O(N)
+ * 1ms 	39.9 MB
 */
 import java.util.*;
 public class maximum_subarray {
