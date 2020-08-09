@@ -1,3 +1,6 @@
+# Runtime: 108 ms, faster than 43.29% of Python3 online submissions for Jump Game.
+# Memory Usage: 15.9 MB, less than 29.41% of Python3 online submissions for Jump Game.
+
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
         pos = 0  # 포인터
