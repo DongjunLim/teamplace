@@ -1,2 +1,2 @@
-### 문제링크
+### 臾몄젣留곹겕
 https://www.acmicpc.net/problem/2412
