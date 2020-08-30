@@ -1,21 +1,21 @@
 /**
- * 
- *  @¹®Á¦Á¢±Ù
- *  UNION-FIND·Î Ç®¾ú½À´Ï´Ù.
  *
- *  @¼º´É
+ *  @ë¬¸ì œì ‘ê·¼
+ *  UNION-FINDë¡œ í’€ì—ˆìŠµë‹ˆë‹¤.
+ *
+ *  @ì„±ëŠ¥
  *  Runtime: 552 ms
  *  Memory Usage: 65012 KB
- *  ½Ã°£º¹Àâµµ: O(M)
- *  
+ *  ì‹œê°„ë³µì¡ë„: O(M)
+ *
  */
-public class BOJ_1717_ÁıÇÕÀÇÇ¥Çö {
+public class BOJ_1717_ì§‘í•©ì˜í‘œí˜„ {
     static final int UNION = 0, FIND = 1;
     
-	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-	public static void main(String[] args) throws IOException {
+    
+    public static void main(String[] args) throws IOException {
         String[] input = br.readLine().split(" ");
 
         solve(Integer.parseInt(input[0]),Integer.parseInt(input[1]));
@@ -28,17 +28,16 @@ public class BOJ_1717_ÁıÇÕÀÇÇ¥Çö {
 
         for(int i = 0; i < m; i++){
             String[] input = br.readLine().split(" ");
-    
-			order = Integer.parseInt(input[0]);
+            
+            order = Integer.parseInt(input[0]);
             a = Integer.parseInt(input[1]);
             b = Integer.parseInt(input[2]);
 
             if(order == UNION)
                 union(a, b, set);
             else {
-                if(isSameSet(a, b, set)){
+                if(isSameSet(a, b, set))
                     bw.write("YES\n");
-                }
                 else
                     bw.write("NO\n");
             }
