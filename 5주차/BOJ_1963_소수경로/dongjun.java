@@ -4,8 +4,8 @@
  * 자릿수를 하나씩 바꿔가며 최소 변경횟수를 찾았습니다.
  *
  * @성능
- *  Runtime: 108 ms
- *  Memory Usage: 14356 KB
+ *  Runtime: 124 ms
+ *  Memory Usage: 14204 KB
  *  시간복잡도: O(VE) V = 노드의 갯수 = 1000~9999,  E = 간선의 갯수 = 36
  */
 public class BOJ_1963_소수경로 {
