@@ -1,5 +1,5 @@
 # 0의 개수 세주고
-# 0의 개수만큼 0빼주고 맨뒤에 넣어준다
+# 0의 개수만큼 0빼주고 맨뒤에 넣어준다.
 
 class Solution(object):
     def moveZeroes(self, nums):
