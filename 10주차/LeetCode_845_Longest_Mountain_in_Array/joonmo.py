@@ -1,3 +1,5 @@
+# 처음에 풀었던 방법이 뒤죽박죽 엉켜서 결국 solution 참고
+
 class Solution(object):
     def longestMountain(self, A):
         N = len(A)
